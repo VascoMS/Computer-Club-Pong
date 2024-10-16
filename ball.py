@@ -31,8 +31,10 @@ class Ball(pygame.sprite.Sprite):
     def paddle_bounce(self):
         self.vel_y = randint(-3, 3)
         if self.vel_x < 0:
+            self.rect.x += self.rect.width 
             self.vel_x = randint(4,8)
         else:
+            self.rect.x -= self.rect.width
             self.vel_x = randint(-8,-4)
 
     def wall_bounce(self):

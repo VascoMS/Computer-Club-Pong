@@ -84,7 +84,7 @@ class Game:
             keys = pygame.key.get_pressed()
             self.handle_input(keys)
 
-            if self.ball.rect.y < 0 or self.ball.rect.y > HEIGHT:
+            if self.ball.rect.y <= 0 or self.ball.rect.y + self.ball.rect.height > HEIGHT:
                 self.ball.wall_bounce()
 
             if self.ball.collided(self.left_paddle) or self.ball.collided(self.right_paddle):
